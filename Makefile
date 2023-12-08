@@ -6,7 +6,7 @@ LINK_OPTS = -static -nostdlib -nostartfiles -lm -lgcc -T ${PROG_PATH}/link.ld
 SCRIPTS_PATH=./py_scripts
 PROG_PATH=./programs
 BIN_PATH=./programs_bin
-HAMMER_PATH=/home/abal/hammer_vector
+HAMMER_PATH?=/home/abal/hammer_vector
 
 
 compile_prog:
