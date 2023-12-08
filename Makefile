@@ -8,9 +8,10 @@ PROG_PATH=./programs
 BIN_PATH=./programs_bin
 HAMMER_PATH?=/home/abal/hammer_vector
 
+update_AVL:
+	python3 ${SCRIPTS_PATH}/change_AVL.py ${PROG_PATH}/${prog}.c ${AVL}
 
 compile_prog:
-	python3 ${SCRIPTS_PATH}/change_AVL.py ${PROG_PATH}/${prog}.c ${AVL}
 	riscv32-unknown-elf-gcc -o ${BIN_PATH}/${prog}.elf ${PROG_PATH}/${prog}.c ${PROG_PATH}/${prog}.S ${COMP_OPTS} ${LINK_OPTS}
 	riscv32-unknown-elf-objdump -D ${BIN_PATH}/${prog}.elf > ${PROG_PATH}/${prog}.dasm
 
